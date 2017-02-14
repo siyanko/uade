@@ -1,0 +1,7 @@
+GET        /                       controllers.AppController.index
+
+# Assests
+GET        /css/*file              @controllers.Assets.at(path="/public/css/", file)
+GET        /fonts/*file            @controllers.Assets.at(path="/public/fonts/", file)
+GET        /img/*file              @controllers.Assets.at(path="/public/img/", file)
+GET        /js/*file               @controllers.Assets.at(path="/public/js/", file)
