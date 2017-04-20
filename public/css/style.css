@@ -181,9 +181,24 @@ header p {
 	margin-top: 20px;
 	margin-bottom: 30px;
 }
+
+/*Activity Section */
+#activity-section {
+	padding: 100px 0;
+}
+#activity-section h4 {
+	border-bottom: 1px solid #b8dea2;
+	padding-bottom: 20px;
+	display: inline-block;
+}
+#activity-section p {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
 /* Team Section */
 #team-section {
 	padding: 100px 0;
+	background-color: #f6f6f6;
 }
 .section-title.center {
 	padding: 30px 0;
@@ -226,7 +241,7 @@ img.team-img {
 	padding-bottom: 10px;
 	display: block;
 }
-/* Gallery Section 
+/* Gallery Section
 ==============================*/
 #works-section {
 	padding: 100px 0;
@@ -337,13 +352,12 @@ ol.type li a:hover {
 /* Contact Section */
 #contact-section {
 	padding: 100px 0;
-	background-color: #f6f6f6;
 }
 #contact-section form {
 	padding: 30px 0;
 }
 #contact-section i.fa {
-	color: #71bd46;
+	/*color: #71bd46;*/
 	margin-right: 20px;
 }
 label {
@@ -460,4 +474,3 @@ label {
 	padding: 15% 10%;
 }
 }
-
