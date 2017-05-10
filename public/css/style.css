@@ -84,7 +84,7 @@ hr {
 	border-color: rgba(231, 231, 231, 0);
 }
 #menu a.navbar-brand {
-	font-size: 22px;
+	font-size: 20px;
 	color: #fefefe;
 	font-weight: 700;
 }
@@ -123,11 +123,23 @@ hr {
 }
 /* Home Style */
 header {
-	background: url(../img/doc_bg.png) no-repeat bottom center;
-	background-size: cover;
 	color: #cfcfcf;
 	position: relative;
 	height: 100%;
+}
+header.bg-image {
+	background: url("../img/doc_bg.png") center center no-repeat;
+	background-size: cover;
+}
+header.bg-image::before{
+	content: '';
+ 	position: absolute;
+ 	top: 0;
+ 	right: 0;
+ 	bottom: 0;
+ 	left: 0;
+ 	background-image: linear-gradient(to bottom right,#778899,#708090);
+ 	opacity: .5;
 }
 header p {
 	color: rgba(255,255,255,0.6);
@@ -149,7 +161,6 @@ header p {
 	font-weight: 600;
 }
 .color {
-	color: #86d791;
 	font-weight: 700;
 }
 .btn-default {
