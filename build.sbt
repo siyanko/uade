@@ -1,9 +1,7 @@
 
-scalaVersion := "2.11.8"
-    
-// The Play project itself
-lazy val root = (project in file("."))
-  .enablePlugins(PlayScala)
-  .settings(
-    name := """uade"""
-  )
+scalaVersion := "2.11.11"
+
+name := """ade-ua"""
+
+enablePlugins(PlayScala)
+
