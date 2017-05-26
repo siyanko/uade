@@ -1,4 +1,7 @@
-GET        /                       controllers.AppController.index
+GET        /                        controllers.AppController.index
+GET        /discussion              controllers.AppController.discussionPage
+GET        /discussion/:uuid        controllers.AppController.discussion(uuid: String)
+POST       /opinion/add             controllers.AppController.addOpinion
 
 # Assests
 GET        /css/*file              @controllers.Assets.at(path="/public/css/", file)

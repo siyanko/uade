@@ -100,7 +100,7 @@ hr {
 #menu.navbar-default .navbar-nav > li > a:hover {
 	color: #8bd196;
 }
-.on {
+.on, .menu-on {
 	background-color: #222222 !important;
 	padding: 0 !important;
 }
@@ -178,10 +178,80 @@ header p {
 	border: 1px solid #86d791;
 	color: #ffffff;
 }
+
+/* Discussion Section */
+#discussion-section {
+	padding: 100px 0;
+    background-color: #f6f6f6;
+}
+#discussion-section h4 {
+	border-bottom: 1px solid #b8dea2;
+	padding-bottom: 20px;
+	display: inline-block;
+}
+#discussion-section p {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+#discussion-section .time {
+    margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+/* Opinion Section */
+#opinion-section {
+	padding: 100px 0;
+}
+
+#opinion-section h4 {
+	border-bottom: 1px solid #b8dea2;
+	padding-bottom: 20px;
+	display: inline-block;
+}
+#opinion-section p {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+#opinion-section .form-control {
+	display: block;
+	width: 100%;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+#opinion-section .form-control:focus {
+	border-color: inherit;
+	outline: 0;
+	-webkit-box-shadow: transparent;
+	box-shadow: transparent;
+}
+#opinion-section .btn {
+	background: transparent;
+	border: 1px solid #71bd46;
+	border-radius: 4px;
+	padding: 10px 20px;
+	margin-top: 20px;
+	color: #71bd46;
+	font-size: 16px;
+}
+#opinion-section .btn:hover, #opinion-section .btn:focus {
+	background: #71bd46;
+	color: #fff;
+}
+
 /* About Section */
 #about-section {
 	padding: 100px 0;
-	background-color: #f6f6f6;
 }
 #about-section h4 {
 	border-bottom: 1px solid #b8dea2;
@@ -196,6 +266,8 @@ header p {
 /*Activity Section */
 #activity-section {
 	padding: 100px 0;
+    background-color: #f6f6f6;
+
 }
 #activity-section h4 {
 	border-bottom: 1px solid #b8dea2;
@@ -209,7 +281,6 @@ header p {
 /* Team Section */
 #team-section {
 	padding: 100px 0;
-	background-color: #f6f6f6;
 }
 .section-title.center {
 	padding: 30px 0;
@@ -363,6 +434,7 @@ ol.type li a:hover {
 /* Contact Section */
 #contact-section {
 	padding: 100px 0;
+	background-color: #f6f6f6;
 }
 #contact-section form {
 	padding: 30px 0;
