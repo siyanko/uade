@@ -1,6 +1,9 @@
+
+var uuid = "88bb9936-3e58-432c-bba9-3ed5aeb7d7cb"
+
 //load data
 $(document).ready(function(){
-    $.get("/discussion/88bb9936-3e58-432c-bba9-3ed5aeb7d7cb", function(data){
+    $.get("/discussion/" + uuid, function(data){
 
         var discussion_title = $("#discussion_title");
 
@@ -42,7 +45,7 @@ $(document).ready(function(){
             dataType: "xml/html/script/json",
             contentType: "application/json",
             data: JSON.stringify({
-                uuid: "88bb9936-3e58-432c-bba9-3ed5aeb7d7cb",
+                uuid: uuid,
                 name: $("#name").val(),
                 comment: $("#comment").val()
             }),

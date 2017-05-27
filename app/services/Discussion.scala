@@ -16,8 +16,8 @@ object Discussion {
     .withRegion(Regions.EU_WEST_1)
     .build()
 
-  //  private val dynamoDb = DynamoDb(dynamoClient)
-  private val dynamoDb = DynamoDb.local()
+    private val dynamoDb = DynamoDb(dynamoClient)
+//  private val dynamoDb = DynamoDb.local()
 
   implicit val commentWrites = new Writes[Comment] {
     override def writes(c: Comment): JsValue = Json.obj(
@@ -27,13 +27,17 @@ object Discussion {
     )
   }
 
-  // TODO: data validation
   implicit val commentReads = new Reads[(String, Comment)] {
     override def reads(json: JsValue): JsResult[(String, Comment)] = {
       val name = (json \ "name").as[String]
       val comment = (json \ "comment").as[String]
       val uuid = (json \ "uuid").as[String]
-      JsSuccess((uuid, Comment(userName = name, message = comment)))
+
+      if (Validator.isValidUserName(name) && Validator.isValidComment(comment)){
+        JsSuccess((uuid, Comment(userName = name, message = comment)))
+      }else {
+        JsError("User name or comment is not valid.")
+      }
     }
   }
 

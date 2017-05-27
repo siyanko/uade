@@ -3,8 +3,11 @@ package controllers
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import play.api.libs.json._
 import play.api.mvc.{Action, Controller}
-import services.{Comment, Discussion}
-import Discussion._
+import services.Comment
+import services.Discussion._
+
+import scala.concurrent.Future
+import scala.util.{Failure, Success, Try}
 
 class AppController extends Controller {
 
@@ -13,19 +16,32 @@ class AppController extends Controller {
   def discussionPage = Assets.at(path = "/public", file = "discussion.html")
 
   def discussion(uuid: String) = Action.async {
-    get(uuid).map { d => Ok(Json.toJson(d))}
+    get(uuid).map { d => Ok(Json.toJson(d)) }
   }
 
-  //TODO: reaction on db update
-  def addOpinion = Action { req =>
+  def addOpinion = Action.async { req =>
     req.body.asJson match {
       case Some(json) =>
-        val (uuid, comment) = json.as[(String, Comment)]
-        addComment(uuid, comment)
-        Ok(Json.toJson("successful"))
+        convertJson(json) match {
+          case Success((uuid, comment)) => addComment(uuid, comment).map {
+            case _ => Ok(Json.toJson("successful"))
+          }.recover {
+            case _ => InternalServerError
+          }
 
-      case None => BadRequest
+          case Failure(ex) => Future {
+            BadRequest(Json.toJson(ex.getMessage))
+          }
+        }
+
+      case None => Future {
+        BadRequest
+      }
     }
+  }
+
+  private def convertJson(json: JsValue): Try[(String, Comment)] = Try {
+    json.as[(String, Comment)]
   }
 
 
