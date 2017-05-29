@@ -35,7 +35,7 @@ class AppController extends Controller {
         }
 
       case None => Future {
-        BadRequest
+        BadRequest("Expected application/json content")
       }
     }
   }
