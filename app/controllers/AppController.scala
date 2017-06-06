@@ -15,6 +15,8 @@ class AppController extends Controller {
 
   def discussionPage = Assets.at(path = "/public", file = "discussion.html")
 
+  def articlesPage = Assets.at(path = "/public", file = "articles.html")
+
   def discussion(uuid: String) = Action.async {
     get(uuid).map { d => Ok(Json.toJson(d)) }
   }

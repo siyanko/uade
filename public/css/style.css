@@ -179,6 +179,28 @@ header p {
 	color: #ffffff;
 }
 
+/* Article Section */
+#article-section .even {
+	padding: 100px 0;
+	background-color: #f6f6f6;
+}
+#article-section .odd {
+	padding: 100px 0;
+}
+#article-section h4 {
+	border-bottom: 1px solid #b8dea2;
+	padding-bottom: 20px;
+	display: inline-block;
+}
+#article-section p {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+#article-section .time {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
 /* Discussion Section */
 #discussion-section {
 	padding: 100px 0;

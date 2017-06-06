@@ -1,5 +1,6 @@
 GET        /                        controllers.AppController.index
 GET        /discussion              controllers.AppController.discussionPage
+GET        /discussions             controllers.AppController.articlesPage
 GET        /discussion/:uuid        controllers.AppController.discussion(uuid: String)
 POST       /opinion/add             controllers.AppController.addOpinion
 
